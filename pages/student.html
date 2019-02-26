@@ -148,7 +148,6 @@ BODY 标签选项：
 
     <!-- Main content -->
     <section class="content">
-
       <!-- 页面内容 -->
       <table id="example" class="display" width="100%"></table>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -180,11 +179,118 @@ BODY 标签选项：
                         else if(data=="未通过")
                         return '<span class="label label-danger">'+data+'</span>';
                     }  },
+                    { title: "操作", sortable: false,
+                    render: function(data, type, row){
+                      return '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">查看</button>';
+                    }  },
                 ]
             });
         });
     })(jQuery);
     </script>
+    <script>
+        $('#modal-default').modal('show');
+      </script>
+      <!-- 弹出框 -->
+      <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+                <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+
+                            <span aria-hidden="true">&times;</span>
+
+                          </button>
+                          <h4 class="modal-title"><i class="fa fa-user"></i>学生用户申请</h4>
+                    </div>
+                    <div class="modal-body">
+                      
+                        <div class="row">
+                            <!-- /.col -->
+                            <div class="col-xs-6">
+                              <p class="lead">身份信息</p>
+                    
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <tbody>
+                                  <tr>
+                                    <th style="width:50%">真实姓名：</th>
+                                    <td>王老五</td>
+                                  </tr>
+                                  <tr>
+                                    <th>性别</th>
+                                    <td>男</td>
+                                  </tr>
+                                  <tr>
+                                    <th>身份证号码</th>
+                                    <td>130923199802231234</td>
+                                  </tr>
+                                  <tr>
+                                      <th>生日</th>
+                                      <td>1998-02-23</td>
+                                  </tr>
+                                  <tr>
+                                    <th>就读学校</th>
+                                    <td>武大第一附小</td>
+                                  </tr>
+                                  <tr>
+                                    <th>年级</th>
+                                    <td>一年级</td>
+                                  </tr>
+                                </tbody></table>
+                              </div>
+                            </div>
+                            <!-- /.col -->
+                            <!-- /.col -->
+                            <div class="col-xs-6">
+                                <p class="lead">账号信息</p>
+                      
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <tbody><tr>
+                                      <th style="width:50%">昵称</th>
+                                      <td>老干妈</td>
+                                    </tr>
+                                    <tr>
+                                      <th>创建时间</th>
+                                      <td>2019-02-08</td>
+                                    </tr>
+                                  </tbody></table>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <div class="row">
+                            <!-- accepted payments column -->
+                            <div class="col-xs-6">
+                              <p class="lead">照片认证</p>
+                              <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                                  手持身份证的免冠照
+                              </p>
+                              <img src="#" alt="手持身份证免冠照">
+                              <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                                  学生本人持其户口簿页面
+                              </p>
+                              <img src="#" alt="学生持户口簿">
+                              <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                                  学生户口簿页面照片
+                              </p>            
+                              <img src="#" alt="学生户口簿页面">
+                            </div>
+                  
+                          </div>
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success pull-right"> 通过认证
+                        </button>
+                        <button type="button" class="btn btn-danger pull-right" style="margin-right: 5px;">
+                           拒绝申请
+                        </button>
+                    </div>
+              </div>
+          </div>
+      </div>
     </section>
     <!-- /.content -->
   </div>
